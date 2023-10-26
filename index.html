@@ -8,8 +8,12 @@
  
 </head>
 <body>
-    <div class="container">
-        <input type="text" placeholder="0" id="inputBox">
+    <div class="tab-container">
+        <button class="tab-button" data-tab="calculator">Calculator</button>
+        <button class="tab-button" data-tab="currency-converter">Currency Converter</button>
+      </div>
+    <div class="tab-content" id="calculator"">
+        <input class="inputBox" type="text" placeholder="0" id="inputBox">
         <div>
             <button id="clear">AC</button>
             <button id="del">DEL</button>
@@ -40,6 +44,26 @@
             <button class="numbers">.</button>
             <button id="equalButn">=</button>
         </div>
+    </div>
+    <div class="tab-content" id="currency-converter-tab">
+
+        <input type="text" placeholder="0" id="currencyAmount">
+
+
+        <select id="baseCurrency">
+          <!-- Add more options for other currencies as needed -->
+        </select>
+        <select id="targetCurrency">
+          <!-- Add more options for other currencies as needed -->
+        </select>
+
+    
+        <button id="convertCurrency">Convert</button>
+        <button id="clearCurrency">Clear</button>
+    
+       
+            <h3 id="result">Conveted Amount: </h3>
+        
     </div>
 
     <script src="script.js"></script>
