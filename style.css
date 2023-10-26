@@ -29,9 +29,11 @@ body {
 
 .tab-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   margin: 30px 0;
 }
+
 
 .tab-button {
   background-color: #f2f2f2;
@@ -163,7 +165,7 @@ body {
   padding: 20px;
 }
 
-#currencyAmount {
+#NumberInputSystem , #currencyAmount {
   border: none;
   border-radius: 0.25rem;
   box-shadow: 0 0 0 1px #ccc;
@@ -173,7 +175,7 @@ body {
   margin-bottom: 1rem;
 }
 
-#currencyAmount:focus {
+#NumberInputSystem:focus ,#currencyAmount:focus {
   box-shadow: 0 0 0 2px #0078d7;
   outline: none;
 }
@@ -201,7 +203,7 @@ option {
   color: #333;
 }
 
-#convertCurrency, #clearCurrency {
+#convertNumberSystem,#ClearSystem,#convertCurrency, #clearCurrency {
   background-color: #0078d7;
   border: none;
   border-radius: 5px;
@@ -213,15 +215,21 @@ option {
   transition: background-color 0.3s ease;
 }
 
-#convertCurrency:hover, #clearCurrency:hover {
+#convertNumberSystem:hover,#ClearSystem:hover,#convertCurrency:hover, #clearCurrency:hover {
   background-color: #005ea2;
 }
 
-#convertCurrency {
+#convertCurrency,#convertNumberSystem {
   margin-bottom: 1rem;
 }
 
 #result {
+  color: beige;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+#resultSystem  {
   color: beige;
   font-size: 1.5rem;
   margin-top: 1rem;

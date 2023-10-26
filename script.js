@@ -1,3 +1,5 @@
+//------------------------------------------------------------- Calculator Starts Here -------------------------------------------------------------//
+
 const input = document.getElementById("inputBox");
 let string = "";
 
@@ -43,6 +45,8 @@ document.getElementById("del").addEventListener("click", () => {
   input.value = string;
 });
 
+//------------------------------------------------------------- Calculator Ends Here -------------------------------------------------------------//
+
 // Toggle between the calculator and currency converter
 const tabButtons = document.querySelectorAll(".tab-button");
 const tabContents = document.querySelectorAll(".tab-content");
@@ -59,6 +63,8 @@ tabButtons.forEach((tabButton, index) => {
     showTab(index);
   });
 });
+
+//------------------------------------------------------------- Currency Converter Starts Here -------------------------------------------------------------//
 
 // Fetch currency data and populate select options
 (function () {
@@ -100,4 +106,29 @@ document.getElementById("clearCurrency").addEventListener("click", () => {
   document.getElementById("targetCurrency").value = "USD";
   document.getElementById("result").innerHTML = "";
   input.value = "";
+});
+
+//------------------------------------------------------------- Currency Converter Ends Here -------------------------------------------------------------//
+
+//------------------------------------------------------------- Nuber System Converter Starts Here -------------------------------------------------------------//
+
+function convertNumberSystem() {
+  const inputNumber = document.getElementById("NumberInputSystem").value;
+  const base = document.getElementById("CurrentSystem").value;
+  const target = document.getElementById("TargetSystem").value;
+  const result = document.getElementById("resultSystem");
+  const convertedNumber = parseInt(inputNumber, base).toString(target);
+  result.innerHTML = `Converted Number: ${convertedNumber}`;
+}
+
+document
+  .getElementById("convertNumberSystem")
+  .addEventListener("click", convertNumberSystem);
+
+document.getElementById("ClearSystem").addEventListener("click", () => {
+  document.getElementById("NumberInputSystem").value = "";
+  document.getElementById("CurrentSystem").options[0].selected = true;
+  document.getElementById("TargetSystem").options[0].selected = true;
+  const result = document.getElementById("resultSystem");
+  result.innerHTML = ``;
 });
